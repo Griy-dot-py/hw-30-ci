@@ -16,10 +16,9 @@ jobs:
       with:
         python-version: "3.12"
         cache: "poetry"
-    - run: poetry shell
     - run: poetry install
     
-    - run: black --check --diff src/
-    - run: isort --profile black --check-only --diff src/
-    - run: flake8 src/
-    - run: mypy src/
+    - run: poetry run black
+    - run: poetry run isort
+    - run: poetry run flake8
+    - run: poetry run mypy
