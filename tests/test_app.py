@@ -1,8 +1,6 @@
-import os
-
 import unittest
 from fastapi.testclient import TestClient
-from src.main import app
+from main import app
 
 
 EXISTING_ID = 1
@@ -42,7 +40,3 @@ with TestClient(app) as client:
             response = self.client.get(f"/recipe/")
             json, *_ = response.json()
             self.assertEqual(json["views"], self.views + 2)
-
-
-if __name__ == "__main__":
-    unittest.main()
