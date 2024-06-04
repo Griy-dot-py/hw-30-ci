@@ -42,3 +42,7 @@ with TestClient(app) as client:
             response = self.client.get(f"/recipe/")
             json, *_ = response.json()
             self.assertEqual(json["views"], self.views + 2)
+
+
+if __name__ == "__main__":
+    unittest.main()
