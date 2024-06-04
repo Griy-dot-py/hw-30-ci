@@ -1,8 +1,8 @@
 name: poetry
 
 runs:
-  shell: bash
   steps:
+    - shell: bash
     - run: pipx install poetry
     - name: Setup python
       uses: actions/setup-python@v5
