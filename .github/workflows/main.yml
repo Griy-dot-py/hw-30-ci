@@ -20,6 +20,9 @@ jobs:
     - run: source $(poetry env info --path)/bin/activate
     
     - run: poetry run black --check --dif src/
-    - run: isort --profile --check-only -- diff src/
-    - run: flake8 src/
-    - run: mypy src/
+    - run: poetry run isort --profile --check-only -- diff src/
+    - run: poetry run flake8 src/
+    - run: poetry run mypy src/
+    
+    - run: cd src/
+    - run: poetry run python3 -m unittest discover ../tests
