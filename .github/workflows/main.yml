@@ -1,0 +1,17 @@
+name: Pipeline
+on:
+  pull_request:
+    types:
+    - opened
+  push:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Get repository code
+      uses: actions/checkout@v3
+    - name: Install dependencies
+      run: poetry install && poetry shell
+    - name: finishing
+      run: echo The End
