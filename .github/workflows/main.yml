@@ -10,7 +10,12 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v3
-    - uses: ./.github/actions/poetry
+    - run: pipx install poetry
+    - uses: actions/setup-python@v5
+      with:
+        python-version: "3.12"
+        cache: "poetry"
+    - run: poetry install
     
     - run: cd src/
     - run: poetry run python3 -m unittest discover ../tests
@@ -19,26 +24,46 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v3
-    - uses: ./.github/actions/poetry
+    - run: pipx install poetry
+    - uses: actions/setup-python@v5
+      with:
+        python-version: "3.12"
+        cache: "poetry"
+    - run: poetry install
     - run: poetry run black --check --diff src/
   
   isort_linter:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v3
-    - uses: ./.github/actions/poetry
+    - run: pipx install poetry
+    - uses: actions/setup-python@v5
+      with:
+        python-version: "3.12"
+        cache: "poetry"
+    - run: poetry install
     - run: poetry run isort --profile --check-only -- diff src/
   
   flake8_linter:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v3
-    - uses: ./.github/actions/poetry
+    - run: pipx install poetry
+    - uses: actions/setup-python@v5
+      with:
+        python-version: "3.12"
+        cache: "poetry"
+    - run: poetry install
     - run: poetry run flake8 src/
   
   mypy_analyzer:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v3
-    - uses: ./.github/actions/poetry
+    - run: pipx install poetry
+    - uses: actions/setup-python@v5
+      with:
+        python-version: "3.12"
+        cache: "poetry"
+    - run: poetry install
     - run: poetry run mypy src/
