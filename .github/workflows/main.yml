@@ -42,7 +42,7 @@ jobs:
         python-version: "3.12"
         cache: "poetry"
     - run: poetry install
-    - run: poetry run isort --profile --check-only -- diff src/
+    - run: poetry run isort --profile black --check-only -- diff src/
   
   flake8_linter:
     runs-on: ubuntu-latest

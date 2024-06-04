@@ -9,6 +9,7 @@ class Base(BaseModel):
 class Ingredient(Base):
     name: str
 
+
 class RecipeBase(Base):
     name: str
 
