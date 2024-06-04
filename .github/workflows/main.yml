@@ -9,6 +9,7 @@ jobs:
   tests:
     runs-on: ubuntu-latest
     steps:
+    - uses: actions/checkout@v3
     - uses: ./.github/actions/poetry
     
     - run: cd src/
@@ -17,23 +18,27 @@ jobs:
   black_linter:
     runs-on: ubuntu-latest
     steps:
+    - uses: actions/checkout@v3
     - uses: ./.github/actions/poetry
     - run: poetry run black --check --diff src/
   
   isort_linter:
     runs-on: ubuntu-latest
     steps:
+    - uses: actions/checkout@v3
     - uses: ./.github/actions/poetry
     - run: poetry run isort --profile --check-only -- diff src/
   
   flake8_linter:
     runs-on: ubuntu-latest
     steps:
+    - uses: actions/checkout@v3
     - uses: ./.github/actions/poetry
     - run: poetry run flake8 src/
   
   mypy_analyzer:
     runs-on: ubuntu-latest
     steps:
+    - uses: actions/checkout@v3
     - uses: ./.github/actions/poetry
     - run: poetry run mypy src/
