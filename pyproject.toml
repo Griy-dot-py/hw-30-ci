@@ -20,14 +20,6 @@ flake8-bugbear = "^24.4.26"
 flake8-pie = "^0.16.0"
 mypy = "^1.10.0"
 
-
-[tool.poetry.scripts]
-fastapi = "cd src/ && uvicorn main:app"
-black = "black --check --diff src/"
-isort = "isort --profile black --check-only --diff src/"
-flake8 = "flake8 src/"
-mypy = "mypy src/"
-
 [build-system]
 requires = ["poetry-core"]
 build-backend = "poetry.core.masonry.api"
