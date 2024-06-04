@@ -1,0 +1,25 @@
+[tool.poetry]
+name = "30-adv-homework"
+version = "0.1.0"
+description = ""
+authors = ["Griogryy Remizov <grigoriyr2412@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.12"
+fastapi = "^0.111.0"
+sqlalchemy = "^2.0.30"
+aiosqlite = "^0.20.0"
+
+
+[tool.poetry.group.dev.dependencies]
+black = "^24.4.2"
+isort = "^5.13.2"
+flake8 = "^7.0.0"
+flake8-bugbear = "^24.4.26"
+flake8-pie = "^0.16.0"
+mypy = "^1.10.0"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
