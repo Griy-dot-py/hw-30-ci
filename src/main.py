@@ -2,8 +2,8 @@ from contextlib import asynccontextmanager
 
 from fastapi import FastAPI, HTTPException
 
-import database
-import schemas
+from . import database
+from . import schemas
 
 
 @asynccontextmanager

@@ -16,9 +16,7 @@ jobs:
         python-version: "3.12"
         cache: "poetry"
     - run: poetry install
-    
-    - run: cd src/
-    - run: poetry run python3 -m unittest discover ../tests
+    - run: poetry run python3 -m unittest discover tests
   
   black_linter:
     runs-on: ubuntu-latest

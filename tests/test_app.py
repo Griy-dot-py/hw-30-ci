@@ -1,6 +1,6 @@
 import unittest
 from fastapi.testclient import TestClient
-from main import app
+from src import app
 
 
 EXISTING_ID = 1

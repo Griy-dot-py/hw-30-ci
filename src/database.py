@@ -91,5 +91,6 @@ async def init():
 
 
 async def close_all():
+    global session
     await session.close_all()
     await engine.dispose()
