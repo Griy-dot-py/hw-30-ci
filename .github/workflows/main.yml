@@ -16,5 +16,6 @@ jobs:
       with:
         python-version: "3.12"
         cache: "poetry"
-    - run: poetry install && poetry shell
+    - run: poetry install
+    - run: poetry shell
     - run: echo The End
